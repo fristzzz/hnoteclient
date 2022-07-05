@@ -1,12 +1,19 @@
 import React from 'react'
-import { } from 'react-native'
+import { View, Text, StyleSheet } from 'react-native'
 
 const Top = () => {
   return (
-    <View>
+    <View style={styles.container}>
       <Text>toptoptop</Text>
     </View>
   )
 }
 
 export default Top
+
+const styles = StyleSheet.create({
+  container: {
+    height: 50,
+    backgroundColor: 'blue',
+  }
+})

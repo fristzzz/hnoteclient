@@ -6,7 +6,7 @@ import EditingScreen from '../screens/EditingScreen';
 import storage from '../utils/storage';
 
 export default function singleNotesView(note) {
-  const navigation = useNavigation()
+
 
   console.log(note);
   return (
@@ -17,7 +17,6 @@ export default function singleNotesView(note) {
 
     <TouchableOpacity
       style={styles.SNV}
-      onPress={navigation.navigate(EditingScreen)}
     >
       <Text style={styles.font}>{note.item.title}</Text>
       <Text style={styles.font}>{note.item.content}</Text>

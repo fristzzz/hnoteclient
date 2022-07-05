@@ -20,30 +20,45 @@ import {
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FlatList } from 'react-native-gesture-handler';
+import { createStackNavigator } from '@react-navigation/stack';
 
 import NoteScreen from './app/screens/NoteScreen';
 import UserScreen from './app/screens/UserScreen';
-
+import EditingScreen from './app/screens/EditingScreen';
 // TODO
 import storage from './app/utils/storage';
 import Top from './app/components/top'
 
 
 const App: () => Node = () => {
-  const Tab = createBottomTabNavigator()
+
+  const Stack = createStackNavigator();
   return (
     <NavigationContainer style={styles.container}>
-      <Tab.Navigator>
-        <Tab.Screen name="Note" component={NoteScreen} />
-        <Tab.Screen name="User" component={UserScreen} />
-      </Tab.Navigator>
-
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false
+        }}>
+        <Stack.Screen name="Home" component={homeScreen} />
+        <Stack.Screen name="Editing" component={EditingScreen} />
+      </Stack.Navigator>
     </NavigationContainer>
   );
 };
 
-
-
+const homeScreen = () => {
+  const Tab = createBottomTabNavigator()
+  return (
+    <Tab.Navigator
+      headerMode='none'
+      screenOptions={{
+        headerShown: false
+      }} >
+      <Tab.Screen name="Note" component={NoteScreen} />
+      <Tab.Screen name="User" component={UserScreen} />
+    </Tab.Navigator>
+  )
+}
 
 const styles = StyleSheet.create({
   container: {
