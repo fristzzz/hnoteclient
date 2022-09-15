@@ -1,3 +1,6 @@
+/// 9.14 此功能暂时废弃
+/// 改用线上存储
+
 import Storage from 'react-native-storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
