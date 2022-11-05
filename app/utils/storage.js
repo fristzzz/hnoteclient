@@ -1,10 +1,11 @@
 /// 9.14 此功能暂时废弃
 /// 改用线上存储
+/// 9.19 本地存储session
 
 import Storage from 'react-native-storage';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
-import Note from './NoteModel';
+import Note from './Note';
 
 const storage = new Storage({
   // 最大容量，默认值1000条数据循环存储
